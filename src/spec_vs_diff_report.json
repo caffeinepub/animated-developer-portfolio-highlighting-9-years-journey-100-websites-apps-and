@@ -1,0 +1,74 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-16T04:59:31.465Z",
+  "summary": "Diff adds a multi-section single-page portfolio (Hero, Journey timeline w/ scroll reveal + progress indicator, Work tabbed categories, Services cards w/ CTA, Contact form w/ validation + placeholders) and a warm/copper theme with reduced-motion handling. However, the requested generated icon assets are not evidenced as present/used, and several extra/auth-related infrastructure pieces were added that were not requested.",
+  "missing_requirements": [
+    {
+      "id": "REQ-7",
+      "requirement": "Add static generated image assets (hero background + category/service icons) under frontend/public/assets/generated and reference them directly; use hero image prominently and use generated icons consistently for categories/services.",
+      "reason": "The hero and timeline accent images are referenced, but the diff does not show the required generated icon sets being added under frontend/public/assets/generated, nor does it show those generated icons being used for Work category visuals or Service cards. Work and Services currently use lucide-react icons, not the specified generated icon PNG sets. Also, the diff summary omits some added files, so asset presence cannot be verified from the provided evidence.",
+      "evidence": [
+        "frontend/src/components/sections/HeroSection.tsx (references /assets/generated/hero-bg.dim_1920x1080.png)",
+        "frontend/src/components/sections/JourneyTimelineSection.tsx (references /assets/generated/timeline-accent.dim_1200x2400.png)",
+        "frontend/src/components/ServiceCards.tsx (uses lucide-react icons Code2/Smartphone/TrendingUp/Search/Palette)",
+        "frontend/src/components/WorkCategoryTabs.tsx (no generated icon usage shown; uses Cards/Badges only)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication provider/hooks and actor management (react-query) added despite portfolio being static and auth not required.",
+      "reason": "BuildRequest explicitly says third-party auth is not required and to avoid unsupported integrations; adding an authentication system and actor plumbing is not requested for a static portfolio.",
+      "evidence": [
+        "frontend/src/main.tsx (wraps app with InternetIdentityProvider and QueryClientProvider)",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    },
+    {
+      "description": "Backend canister stub added (empty Motoko actor).",
+      "reason": "BuildRequest is frontend-focused and does not request any backend behavior; adding a backend file is extra and not evidenced as needed.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Caffeine.ai referral footer link added.",
+      "reason": "Not requested in the BuildRequest requirements/AC; introduces external referral link in UI.",
+      "evidence": [
+        "frontend/src/components/PortfolioLayout.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/ContactForm.tsx",
+    "frontend/src/components/PortfolioLayout.tsx",
+    "frontend/src/components/PortfolioNavbar.tsx",
+    "frontend/src/components/ServiceCards.tsx",
+    "frontend/src/components/TimelineProgressIndicator.tsx",
+    "frontend/src/components/WorkCategoryTabs.tsx",
+    "frontend/src/components/sections/ContactSection.tsx",
+    "frontend/src/components/sections/HeroSection.tsx",
+    "frontend/src/components/sections/JourneyTimelineSection.tsx",
+    "frontend/src/components/sections/ServicesSection.tsx",
+    "frontend/src/components/sections/WorkProjectsSection.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/usePrefersReducedMotion.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/hooks/useScrollReveal.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

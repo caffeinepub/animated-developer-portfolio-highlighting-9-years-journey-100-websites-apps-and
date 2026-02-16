@@ -1,0 +1,151 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-or-small-multi-section-developer-portfolio-site-with-clear-navigation-and-sections-for-hero-intro-9-years-journey-timeline-websites-experience-100-app-development-experience-digital-marketing-seo-graphic-design-services-and-contact-cta",
+      "featureTitle": "Create a single-page (or small multi-section) developer portfolio site with clear navigation and sections for: Hero/Intro, 9+ years journey (timeline), Websites experience (100+), App development experience, Digital marketing/SEO, Graphic design services, and Contact/CTA.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/PortfolioNavbar.tsx",
+        "frontend/src/components/sections/ContactSection.tsx",
+        "frontend/src/components/sections/HeroSection.tsx",
+        "frontend/src/components/sections/JourneyTimelineSection.tsx",
+        "frontend/src/components/sections/ServicesSection.tsx",
+        "frontend/src/components/sections/WorkProjectsSection.tsx",
+        "frontend/src/main.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-polished-animation-system-that-visually-tells-the-developer-s-9-years-journey-in-a-professional-way-including-a-timeline-section-with-animated-milestones-revealed-on-scroll-e-g-fade-slide-parallax-accents-progress-indicator",
+      "featureTitle": "Implement a polished animation system that visually tells the developer’s “9+ years journey” in a professional way, including a timeline section with animated milestones revealed on scroll (e.g., fade/slide, parallax accents, progress indicator).",
+      "files": [
+        "frontend/src/components/TimelineProgressIndicator.tsx",
+        "frontend/src/components/sections/JourneyTimelineSection.tsx",
+        "frontend/src/hooks/usePrefersReducedMotion.ts",
+        "frontend/src/hooks/useScrollReveal.ts",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-work-projects-presentation-that-clearly-communicates-breadth-without-listing-100-items-include-category-based-highlights-for-websites-schools-real-estate-e-commerce-other-and-apps-fintech-cryptocurrency-real-estate-e-commerce-travel-with-a-clean-filterable-or-tabbed-ui-and-short-descriptions-per-category",
+      "featureTitle": "Add a “Work / Projects” presentation that clearly communicates breadth without listing 100+ items: include category-based highlights for Websites (Schools, Real Estate, E-commerce, Other) and Apps (Fintech, Cryptocurrency, Real Estate, E-commerce, Travel), with a clean, filterable or tabbed UI and short descriptions per category.",
+      "files": [
+        "frontend/src/components/WorkCategoryTabs.tsx",
+        "frontend/src/components/sections/WorkProjectsSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-services-section-positioning-the-developer-as-a-one-stop-solution-including-web-development-app-development-digital-marketing-seo-and-graphic-design-with-concise-service-cards-and-a-clear-primary-cta-leading-to-the-contact-section",
+      "featureTitle": "Add a “Services” section positioning the developer as a “one stop solution” including: Web development, App development, Digital marketing, SEO, and Graphic design, with concise service cards and a clear primary CTA leading to the contact section.",
+      "files": [
+        "frontend/src/components/ServiceCards.tsx",
+        "frontend/src/components/sections/ServicesSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-contact-section-suitable-for-a-portfolio-site-include-a-simple-contact-form-ui-name-email-message-and-also-display-optional-contact-methods-placeholders-e-g-email-linkedin-without-requiring-third-party-integrations",
+      "featureTitle": "Create a contact section suitable for a portfolio site: include a simple contact form UI (name, email, message) and also display optional contact methods placeholders (e.g., email/LinkedIn) without requiring third-party integrations.",
+      "files": [
+        "frontend/src/components/ContactForm.tsx",
+        "frontend/src/components/sections/ContactSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-one-coherent-distinctive-visual-theme-for-a-premium-professional-portfolio-avoid-default-template-look-including-consistent-typography-spacing-system-and-a-restrained-color-palette-do-not-use-a-blue-purple-dominant-scheme",
+      "featureTitle": "Apply one coherent, distinctive visual theme for a premium, professional portfolio (avoid default/template look), including consistent typography, spacing system, and a restrained color palette (do not use a blue+purple dominant scheme).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/PortfolioLayout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-static-generated-image-assets-to-elevate-visual-quality-hero-background-illustration-and-a-small-set-of-category-service-icons-and-render-them-from-the-frontend-as-static-files-do-not-proxy-images-through-the-backend",
+      "featureTitle": "Add static generated image assets to elevate visual quality (hero background/illustration and a small set of category/service icons) and render them from the frontend as static files (do not proxy images through the backend).",
+      "files": [
+        "frontend/src/components/sections/HeroSection.tsx",
+        "frontend/src/components/sections/JourneyTimelineSection.tsx",
+        "frontend/src/components/sections/ServicesSection.tsx",
+        "frontend/src/components/sections/WorkProjectsSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

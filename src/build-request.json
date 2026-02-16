@@ -1,0 +1,148 @@
+{
+  "kind": "build_request",
+  "title": "Animated developer portfolio highlighting 9+ years journey, 100+ websites, apps, and digital services",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page (or small multi-section) developer portfolio site with clear navigation and sections for: Hero/Intro, 9+ years journey (timeline), Websites experience (100+), App development experience, Digital marketing/SEO, Graphic design services, and Contact/CTA.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "build a portfolio for software developer having 9+ years of experience developed 100+ websites... also having experience in app development... also having experience in digital marketing, seo and graphic designing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A visitor can reach all required sections via a top navigation (sticky or in-page anchors).",
+        "All section headings and body text are in English.",
+        "Content explicitly includes: “9+ years of experience”, “100+ websites”, and mentions websites across schools/real estate/ecommerce/others, plus apps across fintech/cryptocurrency/real-estate/e-commerce/travel, plus digital marketing/SEO/graphic designing."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a polished animation system that visually tells the developer’s “9+ years journey” in a professional way, including a timeline section with animated milestones revealed on scroll (e.g., fade/slide, parallax accents, progress indicator).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "develop the portfolio having beautiful animation which defines my 9+ years journey very beautifully and professionally"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Timeline milestones animate in as the user scrolls (no auto-playing-only animation).",
+        "Animations are smooth and performant on modern desktop and mobile browsers.",
+        "Provide a user-accessible reduced-motion mode (respect prefers-reduced-motion) that disables or simplifies motion effects."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add a “Work / Projects” presentation that clearly communicates breadth without listing 100+ items: include category-based highlights for Websites (Schools, Real Estate, E-commerce, Other) and Apps (Fintech, Cryptocurrency, Real Estate, E-commerce, Travel), with a clean, filterable or tabbed UI and short descriptions per category.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "developed 100+ websites for schools, real estates, ecommerce and other... developed multiple apps for fintech related, cryptocurrency, real-estate app, e commerce app, traveling app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Websites and Apps are each presented with categories matching the user’s list.",
+        "UI supports switching between categories (tabs, segmented control, or filters).",
+        "Each category contains at least a short English description and representative highlights (non-exhaustive)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add a “Services” section positioning the developer as a “one stop solution” including: Web development, App development, Digital marketing, SEO, and Graphic design, with concise service cards and a clear primary CTA leading to the contact section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "basically one stop solution to all your requirement"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Services list includes all five areas: web dev, app dev, digital marketing, SEO, graphic design.",
+        "Each service is represented as a consistent card with title + short English description.",
+        "There is a prominent CTA button that scrolls/navigates to the contact section."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create a contact section suitable for a portfolio site: include a simple contact form UI (name, email, message) and also display optional contact methods placeholders (e.g., email/LinkedIn) without requiring third-party integrations.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact form includes fields: name, email, message, with basic client-side validation.",
+        "Submitting the form shows a clear success/failure state in the UI (mock/local-only is acceptable).",
+        "No third-party auth, email service, or external integrations are required to use the site."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Apply one coherent, distinctive visual theme for a premium, professional portfolio (avoid default/template look), including consistent typography, spacing system, and a restrained color palette (do not use a blue+purple dominant scheme).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "very beautifully and professionally"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Theme is consistent across all sections (headings, buttons, cards, background accents).",
+        "Color palette is not dominated by blue+purple.",
+        "Layout is responsive and looks polished on mobile, tablet, and desktop."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add static generated image assets to elevate visual quality (hero background/illustration and a small set of category/service icons) and render them from the frontend as static files (do not proxy images through the backend).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All required generated images are present under frontend/public/assets/generated and referenced directly by the frontend.",
+        "Hero section uses the generated hero image as a prominent visual element.",
+        "Category/service visuals use the generated icons consistently (size, style, alignment)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for all user-facing text.",
+    "Do not modify any files under frontend/src/components/ui or other immutable paths listed in SYSTEM_CONTEXT; only compose/reuse those components.",
+    "Do not introduce third-party authentication (only Internet Identity is supported, but it is not required for this portfolio).",
+    "Do not add unsupported integrations (no external email/SMS/push/LLM services)."
+  ],
+  "nonGoals": [
+    "Admin dashboard or CMS for editing portfolio content.",
+    "A full blog system with rich editing, comments, or real-time features.",
+    "Payments, subscriptions, or customer checkout flows.",
+    "Third-party social media API integrations."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Abstract premium hero background illustration with subtle tech motifs (hero-bg.dim_1920x1080.png)",
+      "Minimal line-icon set (consistent stroke) representing: School, Real Estate, E-commerce, Fintech, Cryptocurrency, Travel (icons-set.dim_1024x1024.png)",
+      "Minimal line-icon set (consistent stroke) representing: Digital Marketing, SEO, Graphic Design, Web Development, App Development (services-icons.dim_1024x1024.png)",
+      "Timeline decorative illustration element (e.g., vertical path/constellation style) (timeline-accent.dim_1200x2400.png)"
+    ],
+    "edits": []
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a professional animated portfolio website for a software developer highlighting 9+ years of experience, 100+ websites across multiple domains, app development projects, and digital marketing/SEO/graphic design services.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Abstract premium hero background illustration with subtle tech motifs (hero-bg.dim_1920x1080.png)\n- Minimal line-icon set (consistent stroke) representing: School, Real Estate, E-commerce, Fintech, Cryptocurrency, Travel (icons-set.dim_1024x1024.png)\n- Minimal line-icon set (consistent stroke) representing: Digital Marketing, SEO, Graphic Design, Web Development, App Development (services-icons.dim_1024x1024.png)\n- Timeline decorative illustration element (e.g., vertical path/constellation style) (timeline-accent.dim_1200x2400.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-or-small-multi-section-developer-portfolio-site-with-clear-navigation-and-sections-for-hero-intro-9-years-journey-timeline-websites-experience-100-app-development-experience-digital-marketing-seo-graphic-design-services-and-contact-cta",
+      "title": "Create a single-page (or small multi-section) developer portfolio site with clear navigation and sections for: Hero/Intro, 9+ years journey (timeline), Websites experience (100+), App development experience, Digital marketing/SEO, Graphic design services, and Contact/CTA.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-polished-animation-system-that-visually-tells-the-developer-s-9-years-journey-in-a-professional-way-including-a-timeline-section-with-animated-milestones-revealed-on-scroll-e-g-fade-slide-parallax-accents-progress-indicator",
+      "title": "Implement a polished animation system that visually tells the developer’s “9+ years journey” in a professional way, including a timeline section with animated milestones revealed on scroll (e.g., fade/slide, parallax accents, progress indicator).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-work-projects-presentation-that-clearly-communicates-breadth-without-listing-100-items-include-category-based-highlights-for-websites-schools-real-estate-e-commerce-other-and-apps-fintech-cryptocurrency-real-estate-e-commerce-travel-with-a-clean-filterable-or-tabbed-ui-and-short-descriptions-per-category",
+      "title": "Add a “Work / Projects” presentation that clearly communicates breadth without listing 100+ items: include category-based highlights for Websites (Schools, Real Estate, E-commerce, Other) and Apps (Fintech, Cryptocurrency, Real Estate, E-commerce, Travel), with a clean, filterable or tabbed UI and short descriptions per category.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-services-section-positioning-the-developer-as-a-one-stop-solution-including-web-development-app-development-digital-marketing-seo-and-graphic-design-with-concise-service-cards-and-a-clear-primary-cta-leading-to-the-contact-section",
+      "title": "Add a “Services” section positioning the developer as a “one stop solution” including: Web development, App development, Digital marketing, SEO, and Graphic design, with concise service cards and a clear primary CTA leading to the contact section.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-contact-section-suitable-for-a-portfolio-site-include-a-simple-contact-form-ui-name-email-message-and-also-display-optional-contact-methods-placeholders-e-g-email-linkedin-without-requiring-third-party-integrations",
+      "title": "Create a contact section suitable for a portfolio site: include a simple contact form UI (name, email, message) and also display optional contact methods placeholders (e.g., email/LinkedIn) without requiring third-party integrations.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-one-coherent-distinctive-visual-theme-for-a-premium-professional-portfolio-avoid-default-template-look-including-consistent-typography-spacing-system-and-a-restrained-color-palette-do-not-use-a-blue-purple-dominant-scheme",
+      "title": "Apply one coherent, distinctive visual theme for a premium, professional portfolio (avoid default/template look), including consistent typography, spacing system, and a restrained color palette (do not use a blue+purple dominant scheme).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-static-generated-image-assets-to-elevate-visual-quality-hero-background-illustration-and-a-small-set-of-category-service-icons-and-render-them-from-the-frontend-as-static-files-do-not-proxy-images-through-the-backend",
+      "title": "Add static generated image assets to elevate visual quality (hero background/illustration and a small set of category/service icons) and render them from the frontend as static files (do not proxy images through the backend).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create an animated, professional portfolio site showcasing 9+ years journey, 100+ website projects (schools/real estate/ecommerce/etc.), app development (fintech/crypto/real estate/ecommerce/travel), and digital marketing/SEO/graphic design offerings",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Animated developer portfolio highlighting 9+ years journey, 100+ websites, apps, and digital services",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,19 @@
+{
+  "frontend/src/index.css": "Global styles with warm copper/amber and charcoal OKLCH color system, scroll reveal animations, and reduced-motion support for the portfolio.",
+  "frontend/tailwind.config.js": "Extended Tailwind configuration with custom fonts (Outfit, Inter), sophisticated spacing, warm color palette, and animation utilities.",
+  "frontend/src/App.tsx": "Main application component that composes all portfolio sections with navigation and toast notifications.",
+  "frontend/src/components/PortfolioLayout.tsx": "Layout wrapper providing consistent structure and footer with caffeine.ai attribution.",
+  "frontend/src/components/PortfolioNavbar.tsx": "Sticky navigation bar with smooth scroll anchors and responsive mobile menu.",
+  "frontend/src/components/sections/HeroSection.tsx": "Hero section featuring 9+ years experience, 100+ websites stat, background image, and call-to-action buttons.",
+  "frontend/src/components/sections/JourneyTimelineSection.tsx": "Animated timeline section showcasing 9+ years journey with scroll-revealed milestones and progress indicator.",
+  "frontend/src/components/sections/WorkProjectsSection.tsx": "Work showcase section with tabbed interface for websites and apps categories.",
+  "frontend/src/components/sections/ServicesSection.tsx": "Services section displaying five core service offerings with one-stop solution positioning.",
+  "frontend/src/components/sections/ContactSection.tsx": "Contact section with form, contact methods, and response time information.",
+  "frontend/src/components/WorkCategoryTabs.tsx": "Tabbed component displaying website and app categories with descriptions and highlights.",
+  "frontend/src/components/ServiceCards.tsx": "Grid of service cards for web dev, app dev, digital marketing, SEO, and graphic design.",
+  "frontend/src/components/ContactForm.tsx": "Contact form with validation and local-only submission with success/error toast notifications.",
+  "frontend/src/components/TimelineProgressIndicator.tsx": "Visual progress indicator for timeline section that updates based on scroll position.",
+  "frontend/src/hooks/usePrefersReducedMotion.ts": "Hook to detect user's reduced motion preference for accessibility.",
+  "frontend/src/hooks/useScrollReveal.ts": "IntersectionObserver-based hook for scroll-triggered reveal animations with reduced-motion support.",
+  "frontend/src/hooks/useQueries.ts": "Empty file as backend has no methods; all content is static client-side."
+}

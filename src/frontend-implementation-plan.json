@@ -1,0 +1,244 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Animated single-page developer portfolio (9+ years, 100+ websites, multi-service)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a single-page portfolio with sticky navigation and required sections (Hero, Timeline, Work/Projects, Services, Contact).",
+      "acceptanceCriteria": [
+        "A visitor can reach all required sections via a top navigation (sticky or in-page anchors).",
+        "All section headings and body text are in English.",
+        "Content explicitly includes: “9+ years of experience”, “100+ websites”, and mentions websites across schools/real estate/ecommerce/others, plus apps across fintech/cryptocurrency/real-estate/e-commerce/travel, plus digital marketing/SEO/graphic designing."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell that renders a single-page layout and composes the required sections (Hero/Intro, Timeline, Work/Projects, Services, Contact) with in-page anchor IDs for navigation."
+        },
+        {
+          "path": "frontend/src/components/PortfolioNavbar.tsx",
+          "operation": "create",
+          "description": "Implement a sticky top navigation with in-page anchor links to each required section. Use shadcn-ui components (e.g., Button / NavigationMenu if available) for consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "operation": "create",
+          "description": "Create Hero/Intro section content in English including explicit text “9+ years of experience” and “100+ websites”, plus a primary CTA that scrolls to Contact."
+        },
+        {
+          "path": "frontend/src/components/sections/JourneyTimelineSection.tsx",
+          "operation": "create",
+          "description": "Create the 9+ years journey section wrapper with milestone content structure (years/roles/highlights) and an anchor ID for navigation."
+        },
+        {
+          "path": "frontend/src/components/sections/WorkProjectsSection.tsx",
+          "operation": "create",
+          "description": "Create the Work/Projects section wrapper with copy that mentions websites across schools/real estate/ecommerce/others and apps across fintech/cryptocurrency/real-estate/e-commerce/travel, plus an anchor ID for navigation."
+        },
+        {
+          "path": "frontend/src/components/sections/ServicesSection.tsx",
+          "operation": "create",
+          "description": "Create the Services section wrapper and layout area for service cards and CTA-to-contact."
+        },
+        {
+          "path": "frontend/src/components/sections/ContactSection.tsx",
+          "operation": "create",
+          "description": "Create the Contact/CTA section wrapper containing the contact form UI and optional contact method placeholders (email/LinkedIn), with an anchor ID for navigation."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Ensure the App component is the primary render target and that global styles load correctly for the single-page portfolio."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement scroll-revealed, performant timeline animations with a reduced-motion mode (prefers-reduced-motion).",
+      "acceptanceCriteria": [
+        "Timeline milestones animate in as the user scrolls (no auto-playing-only animation).",
+        "Animations are smooth and performant on modern desktop and mobile browsers.",
+        "Provide a user-accessible reduced-motion mode (respect prefers-reduced-motion) that disables or simplifies motion effects."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/usePrefersReducedMotion.ts",
+          "operation": "create",
+          "description": "Add a small hook to detect prefers-reduced-motion and expose a boolean to simplify/disable motion effects."
+        },
+        {
+          "path": "frontend/src/hooks/useScrollReveal.ts",
+          "operation": "create",
+          "description": "Implement an IntersectionObserver-based scroll reveal helper for timeline milestones (fade/slide) designed for performance and mobile compatibility."
+        },
+        {
+          "path": "frontend/src/components/TimelineProgressIndicator.tsx",
+          "operation": "create",
+          "description": "Add a lightweight progress indicator for the timeline section that updates based on scroll position and respects reduced-motion mode."
+        },
+        {
+          "path": "frontend/src/components/sections/JourneyTimelineSection.tsx",
+          "operation": "modify",
+          "description": "Wire milestone items to scroll-reveal behavior and include decorative/parallax accents guarded by reduced-motion checks. Reference the timeline accent image via the generated static asset file."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define animation utility classes (e.g., reveal base/active states) and include a prefers-reduced-motion media rule that disables/transitions to minimal effects for all portfolio animations."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create a filterable/tabbed Work/Projects UI showing category-based highlights for Websites and Apps with short descriptions.",
+      "acceptanceCriteria": [
+        "Websites and Apps are each presented with categories matching the user’s list.",
+        "UI supports switching between categories (tabs, segmented control, or filters).",
+        "Each category contains at least a short English description and representative highlights (non-exhaustive)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/WorkCategoryTabs.tsx",
+          "operation": "create",
+          "description": "Implement a tabbed UI for switching between Websites and Apps and their categories. Use the shadcn-ui Tabs component (and related UI primitives if needed) to provide accessible tab behavior; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/WorkProjectsSection.tsx",
+          "operation": "modify",
+          "description": "Populate the Work/Projects section with the required categories: Websites (Schools, Real Estate, E-commerce, Other) and Apps (Fintech, Cryptocurrency, Real Estate, E-commerce, Travel), each with short English descriptions and non-exhaustive representative highlights; render consistent icons from generated assets."
+        },
+        {
+          "path": "frontend/src/components/GeneratedIcon.tsx",
+          "operation": "create",
+          "description": "Create a small helper component to render specific icons from the generated sprite/sets (as static images) with consistent sizing/alignment across Work and Services. Verify the component's usage instructions before implementing (if pairing with shadcn-ui layout primitives)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add a Services section with five service cards and a prominent CTA to the Contact section.",
+      "acceptanceCriteria": [
+        "Services list includes all five areas: web dev, app dev, digital marketing, SEO, graphic design.",
+        "Each service is represented as a consistent card with title + short English description.",
+        "There is a prominent CTA button that scrolls/navigates to the contact section."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ServiceCards.tsx",
+          "operation": "create",
+          "description": "Implement a consistent service-card grid for: Web development, App development, Digital marketing, SEO, Graphic design. Use shadcn-ui Card and Button components for consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/ServicesSection.tsx",
+          "operation": "modify",
+          "description": "Wire the Services section to render the service cards, include 'one stop solution' positioning copy in English, and add a primary CTA that scrolls to the Contact section anchor."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement a contact section with a simple validated form, plus local-only success/failure UI states and optional contact placeholders.",
+      "acceptanceCriteria": [
+        "Contact form includes fields: name, email, message, with basic client-side validation.",
+        "Submitting the form shows a clear success/failure state in the UI (mock/local-only is acceptable).",
+        "No third-party auth, email service, or external integrations are required to use the site."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ContactForm.tsx",
+          "operation": "create",
+          "description": "Create a local-only contact form with fields (name, email, message), basic client-side validation, and a submit handler that shows success/failure UI states without external integrations. Use shadcn-ui Input, Textarea, Button, and Alert (or similar) for form controls and feedback; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Render the ContactForm and add optional contact method placeholders (e.g., email/LinkedIn) in a clean layout suitable for a portfolio."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Apply a coherent premium theme (typography/spacing/colors) with responsive layout and a non-blue/purple-dominant palette.",
+      "acceptanceCriteria": [
+        "Theme is consistent across all sections (headings, buttons, cards, background accents).",
+        "Color palette is not dominated by blue+purple.",
+        "Layout is responsive and looks polished on mobile, tablet, and desktop."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Establish global theme tokens (CSS variables for background/foreground/primary/accent), typography defaults, and spacing rhythm. Choose a restrained palette (e.g., charcoal/sand with warm copper/olive accents) that avoids a blue+purple dominant scheme."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme as needed to support the portfolio’s typography scale, spacing, and any custom animations/utilities used across sections while keeping the palette aligned with the non-blue/purple-dominant theme."
+        },
+        {
+          "path": "frontend/src/components/PortfolioLayout.tsx",
+          "operation": "create",
+          "description": "Create a layout wrapper that standardizes section spacing, max widths, and consistent background accents across the page; use shadcn-ui primitives where helpful for consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap the page in PortfolioLayout to ensure consistent typography, spacing, and responsive composition across all sections."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add and reference generated static images (hero background, icons sets, timeline accent) from the frontend public assets.",
+      "acceptanceCriteria": [
+        "All required generated images are present under frontend/public/assets/generated and referenced directly by the frontend.",
+        "Hero section uses the generated hero image as a prominent visual element.",
+        "Category/service visuals use the generated icons consistently (size, style, alignment)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/hero-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated hero background illustration as a static public asset at the exact required path."
+        },
+        {
+          "path": "frontend/public/assets/generated/icons-set.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Add the generated minimal line-icon set (School, Real Estate, E-commerce, Fintech, Cryptocurrency, Travel) as a static public asset at the exact required path."
+        },
+        {
+          "path": "frontend/public/assets/generated/services-icons.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Add the generated minimal line-icon set (Digital Marketing, SEO, Graphic Design, Web Development, App Development) as a static public asset at the exact required path."
+        },
+        {
+          "path": "frontend/public/assets/generated/timeline-accent.dim_1200x2400.png",
+          "operation": "create",
+          "description": "Add the generated timeline decorative illustration element as a static public asset at the exact required path."
+        },
+        {
+          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Reference and render the hero image from frontend/public/assets/generated/hero-bg.dim_1920x1080.png as a prominent visual element within the hero section (no backend proxying)."
+        },
+        {
+          "path": "frontend/src/components/sections/JourneyTimelineSection.tsx",
+          "operation": "modify",
+          "description": "Reference and render the timeline accent image from frontend/public/assets/generated/timeline-accent.dim_1200x2400.png as a decorative element aligned with the timeline."
+        },
+        {
+          "path": "frontend/src/components/sections/WorkProjectsSection.tsx",
+          "operation": "modify",
+          "description": "Reference icons consistently from frontend/public/assets/generated/icons-set.dim_1024x1024.png for the Work/Projects categories (size, style, alignment)."
+        },
+        {
+          "path": "frontend/src/components/sections/ServicesSection.tsx",
+          "operation": "modify",
+          "description": "Reference icons consistently from frontend/public/assets/generated/services-icons.dim_1024x1024.png for all service cards (size, style, alignment)."
+        }
+      ]
+    }
+  ]
+}
